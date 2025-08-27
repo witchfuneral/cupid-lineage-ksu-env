@@ -1,0 +1,8 @@
+KERNEL_DIR=gki-kernel/sm8450
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.aarch64
+
+DEFCONFIG=cupid_defconfig
+
+KERNEL_BINARY=Image
