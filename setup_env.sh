@@ -71,9 +71,16 @@ cp $ROOTDIR/build.config.cupid sm8450/
 cd $ROOTDIR/gki-kernel/sm8450
 curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
 
+# copy kernel build script to the GKI folder
+cp $ROOTDIR/build_cupid.sh $ROOTDIR/gki-kernel/
+
 # done!
 echo "###"
 echo "Environment setup done."
 echo "###"
 
-cd $ROOTDIR
+cd $ROOTDIR/gki-kernel
+
+echo "###"
+echo "Build the kernel by running './build_cupid.sh'"
+echo "###"
