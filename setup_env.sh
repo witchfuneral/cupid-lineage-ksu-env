@@ -6,6 +6,8 @@
 # for distro checking
 source /etc/os-release
 
+ROOTDIR=$(pwd)
+
 UBUNTU_PACKAGES="gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu rsync wget curl clang bc ccache repo"
 ARCH_PACKAGES="aarch64-linux-gnu-gcc aarch64-linux-gnu-binutils rsync wget curl clang bc ccache repo"
 # need to figure out fedora's packages
@@ -50,26 +52,28 @@ echo -n "Enter email: " && read $GIT_EMAIL
 git config --global user.email "$GIT_EMAIL"
 git config --global user.name "$GIT_NAME"
 
-repo init -u https://android.googlesource.com/kernel/manifest/ -b common-android12-5.10-2025-05 --depth 1
+repo init -u https://android.googlesource.com/kernel/manifest/ -b common-android12-5.10-2025-09 --depth 1
 
 # add cupid's repo manifest
 mkdir .repo/local_manifests
-cp ../cupid.xml .repo/local_manifests/
+cp $ROOTDIR/cupid.xml .repo/local_manifests/
 
 # sync all repos
 repo sync -j$(nproc --all)
 
 # once the repo sync is complete, move the defconfig to it's destination
-cp ../cupid_defconfig sm8450/arch/arm64/configs/
+cp $ROOTDIR/cupid_defconfig sm8450/arch/arm64/configs/
 
 # move build.config.cupid
-cp ../build.config.cupid sm8450/
+cp $ROOTDIR/build.config.cupid sm8450/
 
 # add KernelSU support
-cd sm8450
+cd $ROOTDIR/gki-kernel/sm8450
 curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
 
 # done!
 echo "###"
 echo "Environment setup done."
 echo "###"
+
+cd $ROOTDIR
