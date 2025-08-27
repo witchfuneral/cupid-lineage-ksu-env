@@ -8,11 +8,11 @@
 
   <!-- Kernel -->
 
-   <project name="cupid-development/android_kernel_xiaomi_sm8450" path="gki-kernel/sm8450" remote="github" />
+   <project name="cupid-development/android_kernel_xiaomi_sm8450" path="gki-kernel/sm8450" remote="github" revision="lineage-22.2" />
 
-   <project name="cupid-development/android_kernel_xiaomi_sm8450-devicetrees" path="gki-kernel/sm8450-devicetrees" remote="github" />
+   <project name="cupid-development/android_kernel_xiaomi_sm8450-devicetrees" path="gki-kernel/sm8450-devicetrees" remote="github" revision="lineage-22.2" />
 
-   <project name="cupid-development/android_kernel_xiaomi_sm8450-modules" path="gki-kernel/sm8450-modules" remote="github" />
+   <project name="cupid-development/android_kernel_xiaomi_sm8450-modules" path="gki-kernel/sm8450-modules" remote="github" revision="lineage-22.2" />
 
 
 </manifest>
