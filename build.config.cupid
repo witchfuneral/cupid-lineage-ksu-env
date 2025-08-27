@@ -1,4 +1,4 @@
-KERNEL_DIR=gki-kernel/sm8450
+KERNEL_DIR=sm8450
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
 
 . ${ROOT_DIR}/${KERNEL_DIR}/build.config.aarch64
