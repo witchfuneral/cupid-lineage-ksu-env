@@ -23,7 +23,7 @@ arch_install(){
 }
 
 # making all directories
-mkdir gki-kernel anykernel kernel-out
+mkdir gki-kernel
 
 echo "###"
 echo "Installing packages"
@@ -32,6 +32,8 @@ echo "###"
 if [[ $NAME == "Arch Linux" ]]; then
   arch_install
 elif [[ $NAME == "Ubuntu" ]]; then
+  ubuntu_install
+elif [[ $UBUNTU_NAME == "Ubuntu" ]]; then
   ubuntu_install
 else
   echo "Your distro might not be currently supported, sorry."
