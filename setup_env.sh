@@ -63,7 +63,7 @@ cp $ROOTDIR/cupid.xml .repo/local_manifests/
 # sync all repos
 repo sync -j$(nproc --all)
 
-# once the repo sync is complete, move the defconfig to it's destination
+# once the repo sync is complete, move the defconfig to its destination
 cp $ROOTDIR/cupid_defconfig sm8450/arch/arm64/configs/
 
 # move build.config.cupid
