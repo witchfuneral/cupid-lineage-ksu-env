@@ -9,7 +9,7 @@ source /etc/os-release
 ROOTDIR=$(pwd)
 
 UBUNTU_PACKAGES="gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu rsync wget curl clang bc ccache repo"
-ARCH_PACKAGES="aarch64-linux-gnu-gcc aarch64-linux-gnu-binutils rsync wget curl clang bc ccache repo"
+ARCH_PACKAGES="aarch64-linux-gnu-gcc aarch64-linux-gnu-binutils rsync wget curl clang bc ccache repo which file"
 # need to figure out fedora's packages
 # FEDORA_PACKAGES=""
 
